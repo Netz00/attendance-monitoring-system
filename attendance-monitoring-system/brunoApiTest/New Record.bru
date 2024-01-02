@@ -1,0 +1,18 @@
+meta {
+  name: New Record
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/v1/records
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "roomName": "A100",
+    "studentJmbag": "60198321002313870650000023138706"
+  }
+}

@@ -1,0 +1,1 @@
+For development configure: `-Dspring.profiles.active=test to VM Options`
