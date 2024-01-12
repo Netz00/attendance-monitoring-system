@@ -1,11 +1,25 @@
 # Attendance monitoring system
 
-- Basic idea
+- [Presentation](./documentation/AttendanceMonitoringSystem.pptx)
+
+
+## Main Concept
 
 <p align="center">
   <img src="./documentation/basicIdea.png" alt="Basic idea" width="670"/>
 </p>
 
+---
+
+<p align="center">
+  <img src="./documentation/tls.png" alt="TLS security" width="670"/>
+</p>
+
+## Recording attendance flow
+
+<p align="center">
+  <img src="./documentation/sequence_diagram.png" alt="Recording attendance flow" width="750"/>
+</p>
 
 ## RFID Reader
 - *./esp8266* : Card reader arduino code
@@ -17,11 +31,20 @@
 ## Server side
 - *./attendance-monitoring-system* : Backend
 
-ER diagram:
+### Development and environments 
 
 <p align="center">
-  <img src="./documentation/ERD.png" alt="ER diagram" width="750"/>
+  <img src="./documentation/server.png" alt="Development" width="750"/>
 </p>
+
+### ER diagram
+
+<p align="center">
+  <img src="./documentation/erd.svg" alt="ER diagram" width="750"/>
+</p>
+
+
+
 
 ## Requirements
 - NFC-enabled mobile devices with [MIFARE Classic Tool apk](https://play.google.com/store/apps/details?id=de.syss.MifareClassicTool&hl=en)
@@ -57,3 +80,4 @@ ER diagram:
 - [Tutorial: how an RFID 13.56 Mhz read/write ISO-14443A tag works.](https://www.puntoflotante.net/TUTORIAL-RFID-ISO-14443A-TAGS-13.56-MHZ.htm)
 - [Tag Memory access](https://www.mouser.com/datasheet/2/302/MF1S503x-89574.pdf#page=11)
 - [A 2018 practical guide to hacking NFC/RFID](https://smartlockpicking.com/slides/Confidence_A_2018_Practical_Guide_To_Hacking_RFID_NFC.pdf)
+- [Online tool for creating UML sequence diagrams](https://sequencediagram.org/)

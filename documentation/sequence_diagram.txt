@@ -1,0 +1,36 @@
+title Card Reader Sequence Diagram
+
+actor Cardholder
+participant Card
+participant CardReader
+participant WebServer
+
+group Initialization
+  note over CardReader: Reader is turned ON
+  note over CardReader: Connect to Wi-Fi
+  CardReader->WebServer: Establish TLS Tunnel\n(Client authentication included, \nSession reuse for performance)
+  CardReader->WebServer: Fetch Master Key
+end
+
+loop while(alive)
+  create Cardholder
+  Cardholder->*Card: Move card over the reader
+  CardReader->Card: Read card ID
+  activate Card
+  activate CardReader
+  CardReader->CardReader: Derive Unique Card Key\nfrom ID and Master Key
+  CardReader->Card: Read specific block\nwith Unique Card Key
+  deactivate Card
+  CardReader->WebServer: Send Block Data\nand card reader info
+  activate WebServer
+  WebServer->WebServer: Validate request
+  WebServer->WebServer: Save new record with\nUser, Reader and Time
+  WebServer-->CardReader: Return action status
+  deactivate WebServer
+  CardReader-->Cardholder: Play 🔊 and 🚨
+  deactivate CardReader
+  Cardholder->Card: Remove the card
+  destroy Card
+  destroyafter Cardholder
+end
+
